@@ -39,7 +39,9 @@
     </aside>
 </div> -->
  <div class="flex">
-    <aside class="h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-300 transition-all duration-300 ease-in-out shadow-xl"
+    <aside class="h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-300
+         transition-all duration-300 ease-in-out shadow-xl
+         flex flex-col"
     [class.w-64]="isOpen()"
     [class.w-16]="!isOpen()">
         <!-- Header -->
@@ -60,7 +62,7 @@
             </button>}
          </div>
 <!-- Menu -->
-         <nav class="mt-4 px-3 space-y-1">
+         <nav class="mt-4 px-3 space-y-1 flex-1">
             <!--#region Dashboard -->
             <a routerLink="/dashboard"
             routerLinkActive="bg-indigo-600 text-white shadow "
@@ -139,6 +141,7 @@
 
   </div>
 }
+</nav>
 <!-- #endregion -->
             <!-- <a routerLink="/users"
              routerLinkActive="bg-indigo-600 text-white shadow "
@@ -149,16 +152,34 @@
                     <span class="font-medium">Users</span>
                 }
             </a> -->
-            <a routerLink="/settings"
+            <!-- <a routerLink="/settings"
             routerLinkActive="bg-indigo-600 text-white shadow "
-            class="group flex rounded-lg items-center gap-4 px-4 py-3 duration-200 hover:bg-gray-700"  [class.justify-start]="isOpen()"
+            class="group flex  rounded-lg items-center gap-4 px-4 py-3 duration-200 hover:bg-gray-700"  [class.justify-start]="isOpen()"
   [class.justify-center]="!isOpen()">
              <fa-icon icon="gear"  class="text-lg group-hover:scale-130 transition-transform"></fa-icon>   
             @if(isOpen()){
                     <span class="font-medium">Settings</span>
                 }
-            </a>
+            </a> -->
+<div class="px-3 pb-4">
+  <a
+    routerLink="/settings"
+    routerLinkActive="bg-indigo-600 text-white shadow"
+    class="group flex rounded-lg items-center gap-4 px-4 py-3
+           duration-200 hover:bg-gray-700"
+    [class.justify-start]="isOpen()"
+    [class.justify-center]="!isOpen()"
+  >
+    <fa-icon
+      icon="gear"
+      class="text-lg transition-transform group-hover:scale-110"
+    ></fa-icon>
 
-         </nav>
+    @if (isOpen()) {
+      <span class="font-medium">Settings</span>
+    }
+  </a>
+</div>
+         
     </aside>
 </div> 
